@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables for Theming */
+:root {
+  --calc-bg: #1f2937; /* gray-800 */
+  --calc-display-bg: #111827; /* gray-900 */
+  --calc-button-bg: #374151; /* gray-700 */
+  --calc-button-hover-bg: #4b5563; /* gray-600 */
+  --calc-button-active-bg: #1e40af; /* blue-800 */
+  --calc-primary: #3b82f6; /* blue-500 */
+  --calc-primary-hover: #2563eb; /* blue-600 */
+  --calc-primary-active: #1d4ed8; /* blue-700 */
+}
+
+/* Full‑height layout */
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* Center the application */
+.app-container {
+  @apply flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900;
+}
+
+/* Calculator container */
+.calculator {
+  @apply bg-gray-800 rounded-xl shadow-lg p-4 w-full max-w-md;
+}
+
+/* Display area */
+.display {
+  @apply bg-gray-900 text-white text-3xl font-mono text-right rounded-md p-3 mb-4 overflow-x-auto;
+}
+
+/* Base button styling */
+.button {
+  @apply flex items-center justify-center rounded-md text-lg font-semibold select-none;
+}
+
+/* Numeric & operator buttons */
+.button.numeric,
+.button.operator {
+  @apply bg-gray-700 text-white hover:bg-gray-600 active:bg-gray-500;
+}
+
+/* Function buttons (e.g., clear, +/-) */
+.button.function {
+  @apply bg-gray-600 text-white hover:bg-gray-500 active:bg-gray-400;
+}
+
+/* Equals button */
+.button.equals {
+  @apply bg-blue-600 text-white hover:bg-blue-500 active:bg-blue-400;
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .calculator {
+    @apply p-2;
+  }
+  .display {
+    @apply text-2xl p-2;
+  }
+  .button {
+    @apply text-base p-2;
+  }
+}
